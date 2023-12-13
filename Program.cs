@@ -1,17 +1,27 @@
-﻿Album albumDoPTV = new Album();
-albumDoPTV.Nome = "Collide with the sky";
+﻿Banda PTV = new Banda("Pierce The Veil");
 
-Musica musica1 = new Musica();
-musica1.Nome = "May these noises strartle you in your sleeping tonight";
-musica1.Duracao = 120;
+Album albumDoPTV = new Album("Collide with the sky");
 
-Musica musica2 = new Musica();
-musica2.Nome = "Hell Above";
-musica2.Duracao = 240;
 
+Musica musica1 = new Musica(PTV, "May these noises strartle you in your sleeping tonight")
+{
+    Duracao = 120,
+    Disponivel = true,
+};
+
+
+Musica musica2 = new Musica(PTV, "Hell Above")
+{
+    Duracao = 354,
+    Disponivel = false,
+};
 
 
 albumDoPTV.AdicionarMusica(musica1);
 albumDoPTV.AdicionarMusica(musica2);
 
+musica1.ExibirFichaTecnica();
+musica2.ExibirFichaTecnica();
 albumDoPTV.ExibirMusicasDoalbum();
+PTV.AcionarAlbum(albumDoPTV);
+PTV.ExibirDiscografia();
